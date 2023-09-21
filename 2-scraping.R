@@ -1,6 +1,7 @@
 library(tidyverse)
 library(rvest)
 library(dsconnect)
+library(janitor)
 
 
 url <- "https://en.wikipedia.org/wiki/List_of_countries_and_dependencies_by_population"
@@ -24,31 +25,8 @@ pop2 <- pop |>
 
 library(dsconnect)
 
-ds_write(pop2, "jpmarindiaz/world-population", 
+ds_write(pop2, "jpmarindiaz/world-population-3", 
          username = "jpmarindiaz",
          token = "nVNaDbXqygpj84oQ")
-
-
-
-
-# TODO
-# library(gggeo)
-# gggeo::gg_choropleth(map_name = "world_countries")
-# 
-# library(ltgeo)
-# 
-# ltgeo::lt_choropleth(world, "world_countries")
-# 
-# library(lfltmagic)
-# 
-# 
-# lfltmagic::lflt_choropleth_GnmNum()
-
-
-
-
-
-
-
 
 
