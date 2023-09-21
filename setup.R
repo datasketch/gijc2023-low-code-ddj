@@ -19,6 +19,13 @@ if (!require("leaflet", character.only = TRUE)) {
   install.packages("leaflet", dependencies = TRUE)
 }
 
+if (!require("rvest", character.only = TRUE)) {
+  install.packages("rvest", dependencies = TRUE)
+}
+
+if (!require("janitor", character.only = TRUE)) {
+  install.packages("janitor", dependencies = TRUE)
+}
 
 ## Start Setup by restoring R packages 
 
