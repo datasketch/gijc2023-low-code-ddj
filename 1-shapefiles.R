@@ -2,6 +2,7 @@
 # Before you start, make sure you have all package dependencies
 # run 
 # source("setup.R")
+# It can take a few minutes
 
 
 library(tidyverse)
@@ -93,5 +94,5 @@ gg <- ggplot() +
   scale_fill_brewer(palette = "Reds",
                     name = "% chance") +
   theme_void()
-
+gg
 

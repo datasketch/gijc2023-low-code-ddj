@@ -23,6 +23,10 @@ pop2 <- pop |>
   dplyr::mutate(population = as.numeric(gsub(",","",population))) |> 
   dplyr::filter(country_dependency != "World")
 
+install.packages("DT")
+DT::datatable(pop2)
+
+
 library(dsconnect)
 
 ds_write(pop2, "jpmarindiaz/world-population-3", 

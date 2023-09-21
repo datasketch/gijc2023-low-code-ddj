@@ -48,3 +48,17 @@ if (!require("janitor", character.only = TRUE)) {
   install.packages("janitor", dependencies = TRUE)
 }
 
+if (!require("rnaturalearth", character.only = TRUE)) {
+  install.packages("rnaturalearth", dependencies = TRUE)
+}
+
+if (!require("rnaturalearthdata", character.only = TRUE)) {
+  install.packages("rnaturalearthdata", dependencies = TRUE)
+}
+
+if (!require("DT", character.only = TRUE)) {
+  install.packages("DT", dependencies = TRUE)
+}
+
+
+
