@@ -23,14 +23,16 @@ pop2 <- pop |>
   dplyr::mutate(population = as.numeric(gsub(",","",population))) |> 
   dplyr::filter(country_dependency != "World")
 
-install.packages("DT")
 DT::datatable(pop2)
 
-
+# Upload visualizations or charts to datasketch
 library(dsconnect)
 
-ds_write(pop2, "jp-test/world-population-2", 
-         username = "username",
-         token = "TOKENHERE")
+username <- "username"
+token <- "TOKENHERE"
+
+ds_write(pop2, "jp-test/world-population-3", 
+         username = username,
+         token = token)
 
 
