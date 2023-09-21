@@ -23,6 +23,10 @@ if (!require("janitor", character.only = TRUE)) {
   install.packages("janitor", dependencies = TRUE)
 }
 
+
+if (!require("geodato", character.only = TRUE)) {
+  remotes::install_github("datasketch/geodato")
+}
 if (!require("makeup", character.only = TRUE)) {
   remotes::install_github("datasketch/makeup")
 }
@@ -55,6 +59,7 @@ purrr::walk(packages_to_install, function(p){
   }
 })
 
+message("\nSet up done!\n")
 
 
 
