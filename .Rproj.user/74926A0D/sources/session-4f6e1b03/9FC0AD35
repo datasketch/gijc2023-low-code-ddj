@@ -3,7 +3,7 @@
     "path": "~/training/gijc2023-low-code-ddj/setup.R",
     "project_path": "setup.R",
     "type": "r_source",
-    "hash": "2634852398",
+    "hash": "0",
     "contents": "",
     "dirty": false,
     "created": 1695212647770.0,
@@ -13,16 +13,16 @@
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "28,9",
-        "scrollLine": "19",
-        "marks": "<:15,10\n>:15,10"
+        "cursorPosition": "29,13",
+        "scrollLine": "22",
+        "marks": "<:29,6\n>:29,6"
     },
     "folds": "",
-    "lastKnownWriteTime": 1695278212,
+    "lastKnownWriteTime": 1695278509,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1695278212381,
+    "last_content_update": 1695278509560,
     "read_only": false,
     "read_only_alternatives": []
 }

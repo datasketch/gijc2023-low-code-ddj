@@ -27,7 +27,7 @@ purrr::walk(packages_to_install, function(p){
       install.packages(p$package, dependencies = TRUE)
     }
     if(p$source == "github"){
-      devtools::install_github(file.path(p$github_username,
+      remotes::install_github(file.path(p$github_username,
                                          p$package))
     }
   }
