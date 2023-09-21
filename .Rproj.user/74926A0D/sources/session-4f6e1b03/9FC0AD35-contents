@@ -2,12 +2,14 @@
 # Get relevant dependencies
 # Internal lines of code to identify dependencies
 # deps <- rsconnect::appDependencies() |>
-#   mutate(github_username = case_when(
+#   dplyr::mutate(github_username = dplyr::case_when(
 #     package == "d3.format" ~ "dreamRs",
 #     source == "github" ~ "datasketch",
 #     .default = NA
 #   ))
-# write_rds(deps, "setup.deps.rds")
+# # dspkgs <- c("hdbase", "hdtable", "hdtype", "hdviz", "httype")
+# # deps <- deps |> filter(package %in% dspkgs)
+# readr::write_rds(deps, "setup.deps.rds")
 
 # Install tidyverse
 if (!require("tidyverse", character.only = TRUE)) {
@@ -30,15 +32,17 @@ if (!require("geodato", character.only = TRUE)) {
 if (!require("makeup", character.only = TRUE)) {
   remotes::install_github("datasketch/makeup")
 }
-if (!require("hdtype", character.only = TRUE)) {
-  remotes::install_github("datasketch/hdtype")
-}
-if (!require("hdtable", character.only = TRUE)) {
-  remotes::install_github("datasketch/hdtable")
-}
-if (!require("hdbase", character.only = TRUE)) {
-  remotes::install_github("datasketch/hdbase")
-}
+
+# if (!require("hdtype", character.only = TRUE)) {
+#   remotes::install_github("datasketch/hdtype")
+# }
+# if (!require("hdtable", character.only = TRUE)) {
+#   remotes::install_github("datasketch/hdtable")
+# }
+# if (!require("hdbase", character.only = TRUE)) {
+#   remotes::install_github("datasketch/hdbase")
+#}
+
 if (!require("dsconnect", character.only = TRUE)) {
   remotes::install_github("datasketch/dsconnect")
 }
