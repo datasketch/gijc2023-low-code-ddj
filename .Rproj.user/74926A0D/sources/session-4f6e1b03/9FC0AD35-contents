@@ -1,7 +1,7 @@
 
 # Get relevant dependencies
 # Internal lines of code to identify dependencies
-# deps <- rsconnect::appDependencies() |> 
+# deps <- rsconnect::appDependencies() |>
 #   mutate(github_username = case_when(
 #     package == "d3.format" ~ "dreamRs",
 #     source == "github" ~ "datasketch",
@@ -17,8 +17,30 @@ if (!require("tidyverse", character.only = TRUE)) {
 if (!require("remotes", character.only = TRUE)) {
   install.packages("remotes", dependencies = TRUE)
 }
-  
-packages_to_install <- purrr::transpose(readRDS("setup.deps.rds"))
+
+# Install remotes
+if (!require("janitor", character.only = TRUE)) {
+  install.packages("janitor", dependencies = TRUE)
+}
+
+if (!require("makeup", character.only = TRUE)) {
+  remotes::install_github("datasketch/makeup")
+}
+if (!require("hdtype", character.only = TRUE)) {
+  remotes::install_github("datasketch/hdtype")
+}
+if (!require("hdtable", character.only = TRUE)) {
+  remotes::install_github("datasketch/hdtable")
+}
+if (!require("hdbase", character.only = TRUE)) {
+  remotes::install_github("datasketch/hdbase")
+}
+if (!require("dsconnect", character.only = TRUE)) {
+  remotes::install_github("datasketch/dsconnect")
+}
+
+package_dependencies <- readRDS("setup.deps.rds") 
+packages_to_install <- purrr::transpose(package_dependencies)
 
 # Check each package and install if it's not already installed
 purrr::walk(packages_to_install, function(p){

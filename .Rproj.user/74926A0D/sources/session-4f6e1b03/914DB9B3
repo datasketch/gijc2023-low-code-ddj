@@ -1,28 +1,27 @@
 {
-    "id": "9FC0AD35",
-    "path": "~/training/gijc2023-low-code-ddj/setup.R",
-    "project_path": "setup.R",
+    "id": "914DB9B3",
+    "path": "~/training/gijc2023-low-code-ddj/load-packages.R",
+    "project_path": "load-packages.R",
     "type": "r_source",
-    "hash": "0",
+    "hash": "3126766249",
     "contents": "",
     "dirty": false,
-    "created": 1695212647770.0,
+    "created": 1695278603902.0,
     "source_on_save": false,
-    "relative_order": 1,
+    "relative_order": 4,
     "properties": {
         "tempName": "Untitled1",
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "35,44",
-        "scrollLine": "22",
-        "marks": "<:37,0\n>:39,0"
+        "cursorPosition": "3,15",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1695279223,
+    "lastKnownWriteTime": 1695278626,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1695279223647,
+    "last_content_update": 1695278626951,
     "read_only": false,
     "read_only_alternatives": []
 }
