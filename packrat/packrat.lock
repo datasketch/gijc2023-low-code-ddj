@@ -695,6 +695,12 @@ Version: 0.3.3
 Hash: fc6669952803d13a0de491fbadf4da0e
 Requires: httr, jsonlite, sp, terra, sf
 
+Package: rnaturalearthdata
+Source: CRAN
+Version: 0.1.0
+Hash: 26328f9fc646ec64fc957c54873d9efa
+Requires: sp
+
 Package: roxygen2
 Source: CRAN
 Version: 7.2.3

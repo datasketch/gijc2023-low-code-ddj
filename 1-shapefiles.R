@@ -1,7 +1,7 @@
 
 # Before you start, make sure you have all package dependencies
-# run source("setup.R")
-source("setup.R")
+# run 
+# source("setup.R")
 
 
 library(tidyverse)
@@ -23,23 +23,19 @@ geojson <- readLines("data/world1945.geojson", warn = FALSE) %>%
   paste(collapse = "\n") %>%
   jsonlite::fromJSON(simplifyVector = FALSE)
 
+# Some personalization with GeoJSON, but it is limited
+geojson$style = list(
+  weight = 1,
+  color = "red",
+  opacity = 1,
+  fillOpacity = 0.05
+)
 
 leaflet() |> 
   addTiles() |> 
   addGeoJSON(geojson)
 
-# Some personalization with GeoJSON, but it is limited
 
-geojson$style = list(
-  weight = 1,
-  color = "#555555",
-  opacity = 0.8,
-  fillOpacity = 0.5
-)
-
-leaflet() |> 
-  addGeoJSON(geojson, 
-             color = "orange")
 
 # More control rendering polygons directly
 
@@ -48,7 +44,6 @@ leaflet(world1945) |>
   addPolygons(label = ~NAME) 
 
 centroids <- st_centroid(world1945)
-
 
 leaflet(world1945) |> 
   addTiles() |> 
@@ -66,14 +61,37 @@ world <- ne_countries(scale = "medium", returnclass = "sf")
 # Create a color palette for the population data
 pop_palette <- colorNumeric("YlOrRd", world$pop_est, n=5)
 
-leaflet(data = world) %>%
-  addTiles() %>%
+lworld <- leaflet(data = world) |> 
+  addTiles() |> 
   addPolygons(color = "#444444", weight = 1, smoothFactor = 0.5,
               opacity = 1.0, fillOpacity = 0.5,
               fillColor = ~pop_palette(pop_est),
               highlightOptions = highlightOptions(color = "white", weight = 2,
-                                                  bringToFront = TRUE)) %>%
+                                                  bringToFront = TRUE)) |> 
   addLegend(pal = pop_palette, values = ~pop_est, opacity = 0.7,
             title = "Population", position = "bottomright")
+
+lworld
+
+lworld |> 
+  addGeoJSON(geojson)
+  
+
+
+##
+# Which are the countries with an S in its name
+
+library(ggplot2)
+
+world1945s <- world1945 |> 
+  filter(grepl("s", NAME))
+
+
+gg <- ggplot() +
+  geom_sf(data = world1945s,
+          aes(), linewidth = 0.2,color = "black") +
+  scale_fill_brewer(palette = "Reds",
+                    name = "% chance") +
+  theme_void()
 
 
