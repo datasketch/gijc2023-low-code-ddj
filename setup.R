@@ -26,7 +26,7 @@ purrr::walk(packages_to_install, function(p){
     if(p$source == "CRAN"){
       install.packages(p$package, dependencies = TRUE)
     }
-    if(source == "github"){
+    if(p$source == "github"){
       devtools::install_github(file.path(p$github_username,
                                          p$package))
     }
