@@ -29,8 +29,8 @@ DT::datatable(pop2)
 
 library(dsconnect)
 
-ds_write(pop2, "jpmarindiaz/world-population-3", 
-         username = "jpmarindiaz",
-         token = "nVNaDbXqygpj84oQ")
+ds_write(pop2, "jp-test/world-population-2", 
+         username = "username",
+         token = "TOKENHERE")
 
 
