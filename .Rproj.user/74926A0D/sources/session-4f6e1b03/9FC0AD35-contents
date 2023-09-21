@@ -1,15 +1,22 @@
 
 # Get relevant dependencies
 # Internal lines of code to identify dependencies
-deps <- rsconnect::appDependencies() |>
-  dplyr::mutate(github_username = dplyr::case_when(
-    package == "d3.format" ~ "dreamRs",
-    source == "github" ~ "datasketch",
-    .default = NA
-  ))
+# deps <- rsconnect::appDependencies() |>
+#   dplyr::mutate(github_username = dplyr::case_when(
+#     package == "d3.format" ~ "dreamRs",
+#     source == "github" ~ "datasketch",
+#     .default = NA
+#   ))
 # # dspkgs <- c("hdbase", "hdtable", "hdtype", "hdviz", "httype")
 # # deps <- deps |> filter(package %in% dspkgs)
 # readr::write_rds(deps, "setup.deps.rds")
+
+if (!require("renv", character.only = TRUE)) {
+  install.packages("renv", dependencies = TRUE)
+}
+
+library(packrat)
+packrat::init()
 
 # Install tidyverse
 if (!require("tidyverse", character.only = TRUE)) {
@@ -65,6 +72,6 @@ purrr::walk(packages_to_install, function(p){
 
 message("\nSet up done!\n")
 
-
+packrat::snapshot()
 
 

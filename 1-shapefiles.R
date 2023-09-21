@@ -16,7 +16,7 @@ unzip("data/1945.zip", exdir = "data/1945")
 world1945 <- st_read("data/1945")
 
 # Save as geojson
-st_write(world1945, "data/world1945.geojson")
+st_write(world1945, "data/world1945.geojson", append = FALSE)
 
 
 geojson <- readLines("data/world1945.geojson", warn = FALSE) %>%
