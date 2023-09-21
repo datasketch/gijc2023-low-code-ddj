@@ -1,4 +1,25 @@
 
+## Start Setup by restoring R packages 
+
+packrat::status()
+
+result <- tryCatch({
+  packrat::restore()
+  "Success"  # This value gets returned and stored in 'result' if there's no error
+}, 
+error = function(e) {
+  warning("Error in packrat::restore(): ", e$message)
+  "Error"  # This value gets returned and stored in 'result' if there's an error
+})
+
+print(result)
+
+
+
+
+
+
+# Install other packages
 
 if (!require("remotes", character.only = TRUE)) {
   install.packages("remotes", dependencies = TRUE)
@@ -26,24 +47,4 @@ if (!require("rvest", character.only = TRUE)) {
 if (!require("janitor", character.only = TRUE)) {
   install.packages("janitor", dependencies = TRUE)
 }
-
-## Start Setup by restoring R packages 
-
-packrat::status()
-
-result <- tryCatch({
-  packrat::restore()
-  "Success"  # This value gets returned and stored in 'result' if there's no error
-}, 
-error = function(e) {
-  warning("Error in packrat::restore(): ", e$message)
-  "Error"  # This value gets returned and stored in 'result' if there's an error
-})
-
-print(result)
-
-
-
-
-
 
