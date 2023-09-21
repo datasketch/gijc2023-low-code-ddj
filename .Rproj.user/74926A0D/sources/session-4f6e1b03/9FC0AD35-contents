@@ -1,12 +1,12 @@
 
 # Get relevant dependencies
 # Internal lines of code to identify dependencies
-# deps <- rsconnect::appDependencies() |>
-#   dplyr::mutate(github_username = dplyr::case_when(
-#     package == "d3.format" ~ "dreamRs",
-#     source == "github" ~ "datasketch",
-#     .default = NA
-#   ))
+deps <- rsconnect::appDependencies() |>
+  dplyr::mutate(github_username = dplyr::case_when(
+    package == "d3.format" ~ "dreamRs",
+    source == "github" ~ "datasketch",
+    .default = NA
+  ))
 # # dspkgs <- c("hdbase", "hdtable", "hdtype", "hdviz", "httype")
 # # deps <- deps |> filter(package %in% dspkgs)
 # readr::write_rds(deps, "setup.deps.rds")
@@ -26,12 +26,12 @@ if (!require("janitor", character.only = TRUE)) {
 }
 
 
-if (!require("geodato", character.only = TRUE)) {
-  remotes::install_github("datasketch/geodato")
-}
-if (!require("makeup", character.only = TRUE)) {
-  remotes::install_github("datasketch/makeup")
-}
+# if (!require("geodato", character.only = TRUE)) {
+#   remotes::install_github("datasketch/geodato")
+# }
+# if (!require("makeup", character.only = TRUE)) {
+#   remotes::install_github("datasketch/makeup")
+# }
 
 # if (!require("hdtype", character.only = TRUE)) {
 #   remotes::install_github("datasketch/hdtype")
