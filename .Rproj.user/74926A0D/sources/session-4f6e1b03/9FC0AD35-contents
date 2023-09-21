@@ -24,7 +24,7 @@ packages_to_install <- purrr::transpose(readRDS("setup.deps.rds"))
 purrr::walk(packages_to_install, function(p){
   if (!require(p$package, character.only = TRUE)) {
     if(p$source == "CRAN"){
-      install.packages(pkg, dependencies = TRUE)
+      install.packages(p$package, dependencies = TRUE)
     }
     if(source == "github"){
       devtools::install_github(file.path(p$github_username,
